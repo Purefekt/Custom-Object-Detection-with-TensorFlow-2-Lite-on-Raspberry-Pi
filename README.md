@@ -4,7 +4,7 @@ I had saved an unexported copy of my trained model which i will use to export to
 I will use the same Tensorflow folder which i had created in the last project, it contains all the important scripts.
 
 <p align="left">
-  <img src="Assets/Raspi.jpg" width = 60%>
+  <img src="Assets/Raspi.jpg" width = 50%>
 </p>
 
 ## Exporting the model
@@ -213,5 +213,5 @@ python TFLite-PiCamera-od.py
 The Object detection is working correctly with 0.5fps on the Raspberry Pi.
 
 <p align="left">
-  <img src="Assets/detection image.png" width = 40%>
+  <img src="Assets/detection image.png" width = 65%>
 </p>
