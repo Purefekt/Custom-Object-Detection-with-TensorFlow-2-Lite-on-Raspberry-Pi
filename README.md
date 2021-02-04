@@ -3,6 +3,10 @@ This repository continues from my [last project](https://github.com/Purefekt/Cus
 I had saved an unexported copy of my trained model which i will use to export to TensorFlow Lite.  
 I will use the same Tensorflow folder which i had created in the last project, it contains all the important scripts.
 
+<p align="left">
+  <img src="Assets/Raspi.jpg" width = 60%>
+</p>
+
 ## Exporting the model
 Open the Anaconda terminal and activate the virtual environment
 ```
@@ -62,7 +66,10 @@ The following command converts the model to TensorFlow Lite.
 python convert-to-tflite.py
 ```
 File called ```model.tflite``` should appear in the directory ```exported-models\my_tflite_model\saved_model```
-**Add image here**
+
+<p align="left">
+  <img src="Assets/model.tflite image.png" width = 40%>
+</p>
 
 ## Preparing the Model for use
 Creating a new labelmap for the model. The old labelmap looked like this
@@ -77,7 +84,10 @@ The new labelmap for TFLite should look like this, with all the classes (1 in my
 Veer
 ```
 Save this file in the ```exported-models\my_tflite_model\saved_model``` as ```labels.txt```. The folder will look like this now.
-**Add image here***
+
+<p align="left">
+  <img src="Assets/labels.txt image.png" width = 40%>
+</p>
 
 ## Setting up Raspberry Pi and Pi Cam
 Use this [repository](https://github.com/Purefekt/Setting-up-Raspberry-Pi-and-Pi-Cam)
@@ -110,7 +120,11 @@ source bin/activate
 This virtual environment needs to be activated everytime a new terminal is opened.
 
 ## Copying the model.tflite and labels.txt file to the Pi
-I created the ```model.tflite``` and ```labels.txt``` files, now i will copy them to the raspberry pi inside the ```tensorflow/models``` folder on the pi. **Add image here**
+I created the ```model.tflite``` and ```labels.txt``` files, now i will copy them to the raspberry pi inside the ```tensorflow/models``` folder on the pi. 
+
+<p align="left">
+  <img src="Assets/sc of models folder.png" width = 40%>
+</p>
 
 ## Installing the Prerequisites onto the Raspberry pi
 ```
@@ -196,4 +210,8 @@ To test it:
 ```
 python TFLite-PiCamera-od.py
 ```
-The Object detection is working correctly with 0.5fps on the Raspberry Pi. **Add image here**
+The Object detection is working correctly with 0.5fps on the Raspberry Pi.
+
+<p align="left">
+  <img src="Assets/detection image.png" width = 40%>
+</p>
