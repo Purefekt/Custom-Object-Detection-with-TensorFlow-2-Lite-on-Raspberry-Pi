@@ -132,3 +132,67 @@ Correct installation output:
 ```
 2.5.0
 ```
+## Running Object Detection on Image, Video, or Pi Camera
+The following scrips can be used to detect the object (my face) in different ways
+- ```TFLite-PiCamera-od.py```: This program uses the Pi Camera to perform object detection. It also counts and displays the number of objects detected in the frame. The usage is
+```
+usage: TFLite-PiCamera-od.py [-h] [--model MODEL] [--labels LABELS]
+                             [--threshold THRESHOLD] [--resolution RESOLUTION]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model MODEL         Provide the path to the TFLite file, default is
+                        models/model.tflite
+  --labels LABELS       Provide the path to the Labels, default is
+                        models/labels.txt
+  --threshold THRESHOLD
+                        Minimum confidence threshold for displaying detected
+                        objects
+  --resolution RESOLUTION
+                        Desired webcam resolution in WxH. If the webcam does
+                        not support the resolution entered, errors may occur.
+```
+- ```TFLite-Image-od.py```: This program takes a single image as input. The usage is
+```
+usage: TFLite-Image-od.py [-h] [--model MODEL] [--labels LABELS]
+                          [--image IMAGE] [--threshold THRESHOLD]
+                          [--resolution RESOLUTION]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model MODEL         Provide the path to the TFLite file, default is
+                        models/model.tflite
+  --labels LABELS       Provide the path to the Labels, default is
+                        models/labels.txt
+  --image IMAGE         Name of the single image to perform detection on
+  --threshold THRESHOLD
+                        Minimum confidence threshold for displaying detected
+                        objects
+  --resolution RESOLUTION
+                        Desired webcam resolution in WxH. If the webcam does
+                        not support the resolution entered, errors may occur.
+```
+- ```TFLite-Video-od.py```: This program is similar to the last two however it takes a video as input. The usage is
+```
+usage: TFLite-Video-od.py [-h] [--model MODEL] [--labels LABELS]
+                          [--video VIDEO] [--threshold THRESHOLD]
+                          [--resolution RESOLUTION]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --model MODEL         Provide the path to the TFLite file, default is
+                        models/model.tflite
+  --labels LABELS       Provide the path to the Labels, default is
+                        models/labels.txt
+  --video VIDEO         Name of the video to perform detection on
+  --threshold THRESHOLD
+                        Minimum confidence threshold for displaying detected
+                        objects
+  --resolution RESOLUTION
+                        Desired webcam resolution in WxH. If the webcam does
+                        not support the resolution entered, errors may occur.
+```
+To test it:
+```
+python TFLite-PiCamera-od.py
+```
