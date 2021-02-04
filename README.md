@@ -108,3 +108,5 @@ Now to activate the virtual environment
 source bin/activate
 ```
 This virtual environment needs to be activated everytime a new terminal is opened.
+
+## Installing the Prerequisites onto the Raspberry pi
