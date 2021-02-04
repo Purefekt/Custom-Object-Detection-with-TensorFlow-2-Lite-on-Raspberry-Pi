@@ -50,6 +50,10 @@ Correct installation gives the following output.
 2.5.0-dev20210203
 ```
 ## Converting the model to TensorFlow Lite
+Cd into the training_demo directory.
+```
+cd C:\TensorFlow\workspace\training_demo
+```
 The following command converts the model to TensorFlow Lite.
 ```
 python convert-to-tflite.py
