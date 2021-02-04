@@ -196,3 +196,4 @@ To test it:
 ```
 python TFLite-PiCamera-od.py
 ```
+The Object detection is working correctly with 0.5fps on the Raspberry Pi. **Add image here**
