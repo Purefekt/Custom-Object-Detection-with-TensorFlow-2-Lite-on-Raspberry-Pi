@@ -89,7 +89,7 @@ git clone https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-
 ```
 Trimming the name
 ```
-mv TensorFlow-2-Lite-Object-Detection-on-the-Raspberry-Pi tensorflow
+mv Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi tensorflow
 ```
 Creating a Virtual Environment to avoid conflicts with other installed packages on the Raspberry Pi. To install the virtual environment
 ```
