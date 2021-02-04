@@ -113,3 +113,22 @@ This virtual environment needs to be activated everytime a new terminal is opene
 I created the ```model.tflite``` and ```labels.txt``` files, now i will copy them to the raspberry pi inside the ```tensorflow/models``` folder on the pi. **Add image here**
 
 ## Installing the Prerequisites onto the Raspberry pi
+```
+bash install-prerequisites.sh
+```
+Output should be:
+```
+Prerequisites Installed Successfully
+```
+Testing if the installation of tflite_runtime module was correct
+```
+python
+```
+```
+>>> import tflite_runtime as tf
+>>> print(tf.__version__)
+```
+Correct installation output:
+```
+2.5.0
+```
