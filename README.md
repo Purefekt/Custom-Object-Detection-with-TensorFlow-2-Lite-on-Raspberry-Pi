@@ -11,7 +11,7 @@ Changing directories
 ```
 cd C:\TensorFlow\workspace\training_demo
 ```
-Use the following command to export the model to TensorFlow Lite
+Use the following command to export the model.
 ```
 python export_tflite_graph_tf2.py --pipeline_config_path models\my_ssd_mobilenet_v2_fpnlite\pipeline.config --trained_checkpoint_dir models\my_ssd_mobilenet_v2_fpnlite --output_directory exported-models\my_tflite_model
 ```
@@ -45,3 +45,14 @@ python
 >>> import tensorflow as tf
 >>> print(tf.__version__)
 ```
+Correct installation gives the following output.
+```
+2.5.0-dev20210203
+```
+## Converting the model to TensorFlow Lite
+The following command converts the model to TensorFlow Lite.
+```
+python convert-to-tflite.py
+```
+File called ```model.tflite``` should appear in the directory ```exported-models\my_tflite_model\saved_model```
+**Add image here**
