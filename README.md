@@ -2,6 +2,7 @@
 This repository continues from my [last project](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2) where i built a custom object detector for my face using TensorFlow 2. Now i will export that model to TensorFlow 2 Lite so that i can run it on a raspberry pi 4.  
 I had saved an unexported copy of my trained model which i will use to export to TensorFlow Lite.  
 I will use the same Tensorflow folder which i had created in the last project, it contains all the important scripts.
+
 ## Exporting the model
 Open the Anaconda terminal and activate the virtual environment
 ```
@@ -15,6 +16,7 @@ Use the following command to export the model.
 ```
 python export_tflite_graph_tf2.py --pipeline_config_path models\my_ssd_mobilenet_v2_fpnlite\pipeline.config --trained_checkpoint_dir models\my_ssd_mobilenet_v2_fpnlite --output_directory exported-models\my_tflite_model
 ```
+
 ## Creating a New Environment and Installing TensorFlow Nightly
 To avoid version conflicts, i created a new Anaconda virtual environment to hold all the packages necessary for conversion. First, i will deactivate the current environment with
 ```
@@ -49,6 +51,7 @@ Correct installation gives the following output.
 ```
 2.5.0-dev20210203
 ```
+
 ## Converting the model to TensorFlow Lite
 Cd into the training_demo directory.
 ```
@@ -60,3 +63,18 @@ python convert-to-tflite.py
 ```
 File called ```model.tflite``` should appear in the directory ```exported-models\my_tflite_model\saved_model```
 **Add image here**
+
+## Preparing the Model for use
+Creating a new labelmap for the model. The old labelmap looked like this
+```
+item {
+    id: 1
+    name: 'Veer'
+}
+```
+The new labelmap for TFLite should look like this, with all the classes (1 in my case) written one after the other in new lines. It should be saved in a .txt file format.
+```
+Veer
+```
+Save this file in the ```exported-models\my_tflite_model\saved_model``` as ```labels.txt```. The folder will look like this now.
+**Add image here***
