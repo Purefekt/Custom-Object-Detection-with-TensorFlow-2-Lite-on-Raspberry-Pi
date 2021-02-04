@@ -15,3 +15,20 @@ Use the following command to export the model to TensorFlow Lite
 ```
 python export_tflite_graph_tf2.py --pipeline_config_path models\my_ssd_mobilenet_v2_fpnlite\pipeline.config --trained_checkpoint_dir models\my_ssd_mobilenet_v2_fpnlite --output_directory exported-models\my_tflite_model
 ```
+## Creating a New Environment and Installing TensorFlow Nightly
+To avoid version conflicts, i created a new Anaconda virtual environment to hold all the packages necessary for conversion. First, i will deactivate the current environment with
+```
+conda deactivate
+```
+This command will create a new environment for TFLite conversion.
+```
+conda create -n tflite pip python=3.7
+```
+Using this command we can see all virtual environments.
+```
+conda info --envs
+```
+To activate the TFLite environment
+```
+conda activate tflite
+```
