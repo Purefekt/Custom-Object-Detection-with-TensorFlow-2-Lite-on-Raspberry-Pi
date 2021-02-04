@@ -81,3 +81,30 @@ Save this file in the ```exported-models\my_tflite_model\saved_model``` as ```la
 
 ## Setting up Raspberry Pi and Pi Cam
 Use this [repository](https://github.com/Purefekt/Setting-up-Raspberry-Pi-and-Pi-Cam)
+
+## Organizing the Workspace and Virtual Environment
+Clone this repository
+```
+git clone https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi.git
+```
+Trimming the name
+```
+mv TensorFlow-2-Lite-Object-Detection-on-the-Raspberry-Pi tensorflow
+```
+Creating a Virtual Environment to avoid conflicts with other installed packages on the Raspberry Pi. To install the virtual environment
+```
+sudo pip3 install virtualenv
+```
+Now to create the tensorflow virtual env
+```
+python3 -m venv tensorflow
+```
+cd into the directory
+```
+cd tensorflow
+```
+Now to activate the virtual environment
+```
+source bin/activate
+```
+This virtual environment needs to be activated everytime a new terminal is opened.
