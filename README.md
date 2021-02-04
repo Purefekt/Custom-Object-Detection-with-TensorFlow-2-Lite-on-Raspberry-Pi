@@ -7,7 +7,18 @@ I will use the same Tensorflow folder which i had created in the last project, i
   <img src="Assets/Raspi.jpg" width = 50%>
 </p>
 
-## Exporting the model
+## Table of Contents
+1.[Exporting the model](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#exporting-the-model)
+2.[Creating a New Environment and Installing TensorFlow Nightly](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#creating-a-new-environment-and-installing-tensorflow-nightly)
+3.[Converting the model to TensorFlow Lite](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#converting-the-model-to-tensorflow-lite)
+4.[Preparing the Model for use](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#preparing-the-model-for-use)
+5.[Setting up Raspberry Pi and Pi Cam](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#setting-up-raspberry-pi-and-pi-cam)
+6.[Organizing the Workspace and Virtual Environment](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#organizing-the-workspace-and-virtual-environment)
+7.[Copying the model.tflite and labels.txt file to the Pi](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#copying-the-modeltflite-and-labelstxt-file-to-the-pi)
+8.[Installing the Prerequisites onto the Raspberry pi](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#installing-the-prerequisites-onto-the-raspberry-pi)
+9.[Running Object Detection on Image, Video, or Pi Camera](https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi#running-object-detection-on-image-video-or-pi-camera)
+
+## Step 1: Exporting the model
 Open the Anaconda terminal and activate the virtual environment
 ```
 conda activate tensorflow
@@ -21,7 +32,7 @@ Use the following command to export the model.
 python export_tflite_graph_tf2.py --pipeline_config_path models\my_ssd_mobilenet_v2_fpnlite\pipeline.config --trained_checkpoint_dir models\my_ssd_mobilenet_v2_fpnlite --output_directory exported-models\my_tflite_model
 ```
 
-## Creating a New Environment and Installing TensorFlow Nightly
+## Step 2: Creating a New Environment and Installing TensorFlow Nightly
 To avoid version conflicts, i created a new Anaconda virtual environment to hold all the packages necessary for conversion. First, i will deactivate the current environment with
 ```
 conda deactivate
@@ -56,7 +67,7 @@ Correct installation gives the following output.
 2.5.0-dev20210203
 ```
 
-## Converting the model to TensorFlow Lite
+## Step 3: Converting the model to TensorFlow Lite
 Cd into the training_demo directory.
 ```
 cd C:\TensorFlow\workspace\training_demo
@@ -71,7 +82,7 @@ File called ```model.tflite``` should appear in the directory ```exported-models
   <img src="Assets/model.tflite image.png" width = 40%>
 </p>
 
-## Preparing the Model for use
+## Step 4: Preparing the Model for use
 Creating a new labelmap for the model. The old labelmap looked like this
 ```
 item {
@@ -89,10 +100,10 @@ Save this file in the ```exported-models\my_tflite_model\saved_model``` as ```la
   <img src="Assets/labels.txt image.png" width = 40%>
 </p>
 
-## Setting up Raspberry Pi and Pi Cam
+## Step 5: Setting up Raspberry Pi and Pi Cam
 Use this [repository](https://github.com/Purefekt/Setting-up-Raspberry-Pi-and-Pi-Cam)
 
-## Organizing the Workspace and Virtual Environment
+## Step 6: Organizing the Workspace and Virtual Environment
 Clone this repository
 ```
 git clone https://github.com/Purefekt/Custom-Object-Detection-with-TensorFlow-2-Lite-on-Raspberry-Pi.git
@@ -119,14 +130,14 @@ source bin/activate
 ```
 This virtual environment needs to be activated everytime a new terminal is opened.
 
-## Copying the model.tflite and labels.txt file to the Pi
+## Step 7: Copying the model.tflite and labels.txt file to the Pi
 I created the ```model.tflite``` and ```labels.txt``` files, now i will copy them to the raspberry pi inside the ```tensorflow/models``` folder on the pi. 
 
 <p align="left">
   <img src="Assets/sc of models folder.png" width = 40%>
 </p>
 
-## Installing the Prerequisites onto the Raspberry pi
+## Step 8: Installing the Prerequisites onto the Raspberry pi
 ```
 bash install-prerequisites.sh
 ```
@@ -146,7 +157,7 @@ Correct installation output:
 ```
 2.5.0
 ```
-## Running Object Detection on Image, Video, or Pi Camera
+## Step 9: Running Object Detection on Image, Video, or Pi Camera
 The following scrips can be used to detect the object (my face) in different ways
 - ```TFLite-PiCamera-od.py```: This program uses the Pi Camera to perform object detection. It also counts and displays the number of objects detected in the frame. The usage is
 ```
