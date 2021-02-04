@@ -109,4 +109,7 @@ source bin/activate
 ```
 This virtual environment needs to be activated everytime a new terminal is opened.
 
+## Copying the model.tflite and labels.txt file to the Pi
+I created the ```model.tflite``` and ```labels.txt``` files, now i will copy them to the raspberry pi inside the ```tensorflow/models``` folder on the pi. **Add image here**
+
 ## Installing the Prerequisites onto the Raspberry pi
