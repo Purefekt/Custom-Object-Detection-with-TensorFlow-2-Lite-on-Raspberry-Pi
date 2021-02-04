@@ -78,3 +78,6 @@ Veer
 ```
 Save this file in the ```exported-models\my_tflite_model\saved_model``` as ```labels.txt```. The folder will look like this now.
 **Add image here***
+
+## Setting up Raspberry Pi and Pi Cam
+Use this [repository](https://github.com/Purefekt/Setting-up-Raspberry-Pi-and-Pi-Cam)
