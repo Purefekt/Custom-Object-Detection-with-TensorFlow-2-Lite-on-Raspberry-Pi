@@ -32,3 +32,16 @@ To activate the TFLite environment
 ```
 conda activate tflite
 ```
+**Note: This virtual environment must be activated everytime the anaconda terminal is closed**  
+Now i will install TensorFlow in this virtual environment. However, in this environment i will not just be installing standard TensorFlow. i will be installing tf-nightly. This package is a nightly updated build of TensorFlow. This means it contains the very latest features that TensorFlow has to offer. I will be installing the CPU version. To start the installation.
+```
+pip install tf-nightly
+```
+Sanity check to test the installation.
+```
+python
+```
+```
+>>> import tensorflow as tf
+>>> print(tf.__version)
+```
